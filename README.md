@@ -13,8 +13,9 @@ This repo contains **Jupyter notebooks** that demonstrate an end-to-end workflow
 ## Contents
 
 - `start-notebook.sh` — creates a local `.venv`, installs Jupyter + ipykernel, registers a kernel, then starts Jupyter Notebook
-- `login-globus.ipynb` — get an IRI API token via Globus (for endpoints that support Globus auth. THIS IS TEMPORARY AND WILL NOT BE SUPPORTED IN THE FUTURE. Pleass use facility specific authentication)
-- `login-esnet.ipynb` — get an IRI API token via ESnet/SENSE auth (Facility specific authentication for ESnet)
+- `login-globus.ipynb` — get an IRI API token via Globus (for endpoints that support Globus auth. THIS IS TEMPORARY AND WILL NOT BE SUPPORTED IN THE FUTURE. Currently supported by NERSC and ESnet IRI Endpoints
+- `login-esnet.ipynb` — get an IRI API token for ESnet IRI Endpoints (Facility Specific)
+- `login-alcf.ipynb` - get an IRI API token for ALCF IRI Endpoints (Facility Specific)
 - `filesystem.ipynb` — list/download/upload/check paths via the IRI Filesystem API
 - `compute-jobs.ipynb` — compute job examples (new compute payload format)
 - `compute-job-mini-gpt.ipynb` — MiniGPT training job example using container image + shared storage
@@ -90,18 +91,26 @@ This will:
 
 Choose one:
 
-#### Globus
+#### Globus (For NERSC and ESnet Endpoints)
+
 Run:
 
 ```
 login-globus.ipynb
 ```
 
-#### ESnet / SENSE
+#### ESnet / SENSE (Facility Specific)
 
 ```
 login-esnet.ipynb
 ```
+
+#### ALCF (Facility Specific)
+
+```
+login-alcf.ipynb
+```
+
 
 #### Manual token
 

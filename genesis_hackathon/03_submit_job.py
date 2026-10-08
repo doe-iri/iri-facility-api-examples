@@ -53,11 +53,4 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    config = get_config(args.facility)
-    print(submit_job(config))
-
-    print()
-    print("If job submission is successful, your job logs are set to:")
-    print(config.stdout_path if config.stdout_path else "'stdout_path' not specified.")
-    print(config.stderr_path if config.stderr_path else "'stderr_path' not specified.")
-    print()
+    print(get_config(args.facility))

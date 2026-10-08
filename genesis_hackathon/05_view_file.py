@@ -97,5 +97,5 @@ if __name__ == "__main__":
             break
 
     # Print error or file content
-    print(json.dumps(response["result"], indent=2))
+    print(json.dumps(response.get("result"), indent=2))
     

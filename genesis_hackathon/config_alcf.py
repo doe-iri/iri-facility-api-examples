@@ -32,8 +32,8 @@ alcf_username = ""
 alcf_project = ""
 
 # Target resources
-COMPUTE_RESOURCE_ID = "0325fc07-6fb7-4453-b772-3d5030b2df72" # Aurora
-FILESYSTEM_RESOURCE_ID = "154bb3be-5d12-4a76-a16b-898b8e310a4b" # Flare
+COMPUTE_RESOURCE_ID = "55c1c993-1124-47f9-b823-514ba3849a9a" # Polaris
+FILESYSTEM_RESOURCE_ID = "6115bd2c-957a-4543-abff-5fae52992ff2" # Home (for Polaris and Crux only)
 
 # Job submission parameters
 NODES = 1

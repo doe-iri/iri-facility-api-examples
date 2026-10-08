@@ -14,7 +14,8 @@ Create a `.env` file to store your IRI tokens:
 IRI_TOKEN_ALCF=""
 IRI_TOKEN_NERSC=""
 AMSC_TOKEN=""  # ESnet; or set AMSC_TOKEN_FILE (default /tmp/amsc-token.txt)
-IRI_TOKEN_OLCF=""
+IRI_TOKEN_OLCF="" # OLCF S3M token
+OLCF_S3M_PROJECT="" # OLCF only, set to project id (e.g., abc123) used to create S3M token
 ```
 
 Make sure you edit the `config_<facility>.py` files to set your exercises.
@@ -45,7 +46,7 @@ alcf-tokens get-token iri
   - v1: (SLOW) Globus token. [https://github.com/doe-iri/iri-facility-api-examples/blob/main/login-globus.ipynb]. Send an email to jbalcas@es.net with introspection
   - v2: (FAST) AmSC token (PAT) from MyAmSC for the `hackathon2610` project, see `../login-amsc.ipynb`. ESnet accepts AmSC tokens on `api/v2` only.
 - OLCF
-  - ...
+  - v2: [https://docs.olcf.ornl.gov/services_and_applications/s3m/overview.html#get-a-token](https://docs.olcf.ornl.gov/services_and_applications/s3m/overview.html#get-a-token)
 
 
 ## 3. Main Exercises

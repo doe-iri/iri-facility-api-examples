@@ -7,7 +7,8 @@ class Facilities(str, Enum):
     alcf = "alcf"
     nersc = "nersc"
     esnet = "esnet"
-    olcf = "olcf"
+    olcf_open = "olcf-open"
+    olcf_moderate = "olcf-moderate"
     
 
 class Config(BaseModel):
@@ -25,6 +26,7 @@ class Config(BaseModel):
     walltime_sec: int = Field(ge=300)
     queue: str = Field(min_length=1)
     compute_allocation: str = Field(min_length=1)
+    working_directory: Optional[str] = Field(default=None)
     stdout_path: str = Field(min_length=1)
     stderr_path: str = Field(min_length=1)
     custom_attributes: Optional[dict] = Field(default={}) 

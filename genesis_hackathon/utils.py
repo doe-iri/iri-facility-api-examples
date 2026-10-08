@@ -18,9 +18,12 @@ def get_config(facility: str) -> Config:
     elif facility.lower() == "esnet":
         import config_esnet
         return config_esnet.config
-    elif facility.lower() == "olcf":
-        import config_olcf
-        return config_olcf.config
+    elif facility.lower() == "olcf-open":
+        import config_olcf_open
+        return config_olcf_open.config
+    elif facility.lower() == "olcf-moderate":
+            import config_olcf_moderate
+            return config_olcf_moderate.config
     else:
         print(f"Facility {facility} not supported yet.")
         sys.exit(1)

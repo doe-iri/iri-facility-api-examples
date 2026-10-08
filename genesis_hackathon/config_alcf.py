@@ -65,17 +65,17 @@ TOKEN = os.environ.get("IRI_TOKEN_ALCF")
 
 # Set stdout/sdterr paths
 if FILESYSTEM_RESOURCE_ID == "6115bd2c-957a-4543-abff-5fae52992ff2":
-    stdout_path = f"/home/{alcf_username}/iri_test.out"
-    stderr_path = f"/home/{alcf_username}/iri_test.err"
+    STDOUT_PATH = f"/home/{alcf_username}/iri_test.out"
+    STDERR_PATH = f"/home/{alcf_username}/iri_test.err"
 elif FILESYSTEM_RESOURCE_ID == "1c3ad9d4-2e91-42bc-becb-72b1fde1235c":
-    stdout_path = f"/eagle/{alcf_project}/{alcf_username}_iri_test.out"
-    stderr_path = f"/eagle/{alcf_project}/{alcf_username}_iri_test.err"
+    STDOUT_PATH = f"/eagle/{alcf_project}/{alcf_username}_iri_test.out"
+    STDERR_PATH = f"/eagle/{alcf_project}/{alcf_username}_iri_test.err"
 elif FILESYSTEM_RESOURCE_ID == "154bb3be-5d12-4a76-a16b-898b8e310a4b":
-    stdout_path = f"/flare/{alcf_project}/{alcf_username}_iri_test.out"
-    stderr_path = f"/flare/{alcf_project}/{alcf_username}_iri_test.err"
+    STDOUT_PATH = f"/flare/{alcf_project}/{alcf_username}_iri_test.out"
+    STDERR_PATH = f"/flare/{alcf_project}/{alcf_username}_iri_test.err"
 else:
-    stdout_path = None
-    stderr_path = None
+    STDOUT_PATH = None
+    STDERR_PATH = None
 
 # Automatic assignment of custom attributes
 if COMPUTE_RESOURCE_ID in ["55c1c993-1124-47f9-b823-514ba3849a9a", "8b9b42f7-572a-4909-8472-a0453436304c"]:

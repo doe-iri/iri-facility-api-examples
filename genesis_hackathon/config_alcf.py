@@ -28,7 +28,7 @@ load_dotenv()
 # TODO: Please insert your ALCF username in `alcf_username`.
 # TODO: If you target the Flare or Eagle filesystems, please insert your ALCF project in `alcf_project`.
 alcf_username = ""
-alcf_project = ""
+alcf_project = "GenesisHackathonOct26"
 
 # Target resources
 COMPUTE_RESOURCE_ID = "55c1c993-1124-47f9-b823-514ba3849a9a" # Polaris

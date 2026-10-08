@@ -12,7 +12,7 @@ from utils import get_config, get_headers
 # Define query parameters
 params = {
     "historical": "true", # "true" will include completed jobs
-    "limit": 50, # maximum number of jobs returned
+    "limit": 10, # maximum number of jobs returned
     "offset": 0,
 }
 

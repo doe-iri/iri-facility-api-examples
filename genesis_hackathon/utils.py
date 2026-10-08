@@ -34,6 +34,7 @@ def get_config(facility: str) -> Config:
     if facility == "alcf":
         import config_alcf as c
         _require(c.TOKEN, "IRI_TOKEN_ALCF")
+        c.validate_input()
     elif facility == "nersc":
         import config_nersc as c
         _require(c.TOKEN, "IRI_TOKEN_NERSC")

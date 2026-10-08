@@ -11,6 +11,12 @@ class Facilities(str, Enum):
     olcf_moderate = "olcf-moderate"
     
 
+# Non-authenticated
+class BaseConfig(BaseModel):
+    base_url: str = Field(min_length=1)
+
+
+# Authenticated
 class Config(BaseModel):
 
     # API URL

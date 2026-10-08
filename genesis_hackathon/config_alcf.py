@@ -1,15 +1,10 @@
 import os
-import sys
-from models import Config
 from dotenv import load_dotenv
 load_dotenv()
 
 # API access
 BASE_URL = "https://api.alcf.anl.gov/api/v1"
 TOKEN = os.environ.get("IRI_TOKEN_ALCF")
-if TOKEN is None:
-    print("IRI_TOKEN_ALCF missing in .env file.")
-    sys.exit(1)
 
 # Job submission resources
 COMPUTE_RESOURCE_ID = "55c1c993-1124-47f9-b823-514ba3849a9a" # Polaris
@@ -43,18 +38,4 @@ if COMPUTE_RESOURCE_ID == "55c1c993-1124-47f9-b823-514ba3849a9a" or \
 elif COMPUTE_RESOURCE_ID == "0325fc07-6fb7-4453-b772-3d5030b2df72":
     custom_attributes = {"filesystems": "flare"}
 
-config = Config(
-    base_url=BASE_URL,
-    token=TOKEN,
-    compute_resource_id = COMPUTE_RESOURCE_ID,
-    filesystem_resource_id = FILESYSTEM_RESOURCE_ID,
-    nodes = NODES,
-    walltime_sec = WALLTIME_SEC,
-    queue = QUEUE,
-    compute_allocation = COMPUTE_ALLOCATION,
-    stdout_path = STDOUT_PATH,
-    stderr_path = STDERR_PATH,
-    commands = COMMANDS,
-    filters = FILTERS,
-    custom_attributes = custom_attributes,
-)
+

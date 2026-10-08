@@ -7,12 +7,12 @@ import argparse
 import json
 import requests
 
-from models import Config, Facilities
-from utils import get_config, get_headers
+from models import BaseConfig, Facilities
+from utils import get_base_config
 
 
 # Query the status of a specific resource
-def get_resource(config: Config, resource_id):
+def get_resource(config: BaseConfig, resource_id):
     response = requests.get(f"{config.base_url}/status/resources/{resource_id}")
     return json.dumps(response.json(), indent=2)
 
@@ -33,4 +33,4 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    print(get_resource(get_config(args.facility), args.resource_id))
+    print(get_resource(get_base_config(args.facility), args.resource_id))

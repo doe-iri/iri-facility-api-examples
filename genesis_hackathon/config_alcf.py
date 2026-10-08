@@ -49,7 +49,7 @@ hostname
 echo End
 """
 
-# Optinoal filters when listing jobs
+# Optional filters when listing jobs
 #FILTERS={"accountingId": "alcf_training", "states": ["completed"]}
 FILTERS={}
 

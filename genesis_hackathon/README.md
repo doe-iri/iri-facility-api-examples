@@ -25,16 +25,46 @@ Make sure you edit the `config_<facility>.py` files to set your exercises.
 
 ### ALCF
 
-Install the ALCF token manager package and authenticate with Globus Auth:
+Install the ALCF token manager and authenticate with Globus Auth:
 ```bash
 pip install alcf-tokens
 alcf-tokens login iri
 ```
 
+Copy the URL to your browser, authenticate with your ALCF credentials, and copy-paste the authorization code back to your terminal.
+
 Print your IRI API token:
 ```bash
 alcf-tokens get-token iri
 ```
+
+### NERSC
+
+Install the NERSC token manager and authenticate with Globus Auth:
+```bash
+pip install nersc-tokens
+nersc-tokens login iri
+```
+
+Open the URL, sign in with your NERSC account, approve access, and paste the authorization code.
+
+Print your IRI API token:
+```bash
+nersc-tokens get-token iri
+```
+
+### OLCF
+
+To access the IRI API via the OLCF Secure Scientific Service Mesh (S3M), go to [https://my.olcf.ornl.gov/](https://my.olcf.ornl.gov/), select ‘Moderate‘, and hit the ‘Log In‘ button:
+
+- Enter your OLCF username
+- Enter your Passcode (4 digit PIN + 6 digit RSA Token)
+- Select your project from the ‘My Projects’ drop down top-left
+- Select ‘S3M Access → New Token’ in left sidebar
+- Choose ‘AmSC IRI API’ token permissions, give your token a name (e.g., ‘myuser-Oct15’), select ‘1 week’ for token lifetime, then hit ‘Submit’
+- Copy the S3M token string using the provided button and save it for later use
+(export IRI_TOKEN_OLCF=<S3M_TOKEN> or add IRI_TOKEN_OLCF to the `.env` file.)
+
 
 ### Documentation
 - ALCF

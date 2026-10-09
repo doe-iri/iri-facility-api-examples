@@ -6,6 +6,12 @@ TODO: If you target the Flare or Eagle filesystems, please insert your ALCF proj
 By default, the configuration will target Polaris and the Home Filesystem.
 Below are resource IDs you can use if you want to change the configuration.
 
+Reservations for the October 2026 hackathon
+(available from Oct 14th 9am to Oct 16tn 5pm)
+---------------------------------------------
+QUEUE = "R8914313" # Reservation for Aurora
+QUEUE = "R7728155" # Reservation for Polaris
+
 Compute Resource IDs
 --------------------
 COMPUTE_RESOURCE_ID = "0325fc07-6fb7-4453-b772-3d5030b2df72" # Aurora
@@ -37,7 +43,7 @@ FILESYSTEM_RESOURCE_ID = "6115bd2c-957a-4543-abff-5fae52992ff2" # Home (for Pola
 # Job submission parameters
 NODES = 1
 WALLTIME_SEC = 300
-QUEUE = "debug"
+QUEUE = "R7728155" # Reservation for Polaris
 COMPUTE_ALLOCATION = "GenesisHackathonOct26"
 
 # Commands to be executed in the job

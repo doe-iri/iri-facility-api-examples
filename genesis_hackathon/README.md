@@ -38,6 +38,8 @@ Print your IRI API token:
 alcf-tokens get-token iri
 ```
 
+Add your token in the IRI_TOKEN_ALCF variable in the `.env` file.
+
 ### NERSC
 
 Install the NERSC token manager and authenticate with Globus Auth:
@@ -52,6 +54,8 @@ Print your IRI API token:
 ```bash
 nersc-tokens get-token iri
 ```
+
+Add your token in the IRI_TOKEN_NERSC variable in the `.env` file.
 
 ### OLCF
 

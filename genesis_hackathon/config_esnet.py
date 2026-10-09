@@ -1,4 +1,5 @@
 import os
+import uuid
 from pathlib import Path
 from dotenv import load_dotenv
 load_dotenv()
@@ -22,8 +23,10 @@ NODES=1
 WALLTIME_SEC=300
 QUEUE="default"
 COMPUTE_ALLOCATION="hackathon2610-project"
-STDOUT_PATH="/data/home/hackathon2610/iri_test.out"
-STDERR_PATH="/data/home/hackathon2610/iri_test.err"
+# Unique log names per submission: all hackathon users share this home directory.
+LOG_ID = uuid.uuid4()
+STDOUT_PATH=f"/data/home/hackathon2610/iri_test_{LOG_ID}.out"
+STDERR_PATH=f"/data/home/hackathon2610/iri_test_{LOG_ID}.err"
 
 # Commands to be executed in the job
 COMMANDS="""

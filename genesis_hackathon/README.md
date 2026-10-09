@@ -55,7 +55,7 @@ nersc-tokens get-token iri
 
 ### OLCF
 
-To access the IRI API via the OLCF Secure Scientific Service Mesh (S3M), go to [https://my.olcf.ornl.gov/](https://my.olcf.ornl.gov/), select ‘Moderate‘, and hit the ‘Log In‘ button:
+To access the IRI API via the OLCF Secure Scientific Service Mesh (S3M), go to [https://my.olcf.ornl.gov/](https://my.olcf.ornl.gov/), select ‘Moderate‘, and hit the ‘Log In‘ button.
 
 - Enter your OLCF username
 - Enter your Passcode (4 digit PIN + 6 digit RSA Token)
@@ -64,6 +64,17 @@ To access the IRI API via the OLCF Secure Scientific Service Mesh (S3M), go to [
 - Choose ‘AmSC IRI API’ token permissions, give your token a name (e.g., ‘myuser-Oct15’), select ‘1 week’ for token lifetime, then hit ‘Submit’
 - Copy the S3M token string using the provided button and save it for later use
 (export IRI_TOKEN_OLCF=<S3M_TOKEN> or add IRI_TOKEN_OLCF to the `.env` file.)
+
+### ESnet
+
+Login to My AmSC website: [https://my.amsc.energy.gov/](https://my.amsc.energy.gov/) and select a project in the left sidebar. The PAT is bound to this project. Make sure "Genesis Mission October 2026 Hackathon" is selected.
+
+- Click Personal Access Tokens and click New
+- Enter token description and then hit Submit
+- Copy the AmSC token using the provided button and save it for later use:
+  - export AMSC_TOKEN=<YOUR AMSC TOKEN>
+  - save into a file /tmp/amsc_token.txt
+  - or add AMSC_TOKEN to the `.env` file.
 
 
 ### Documentation

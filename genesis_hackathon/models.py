@@ -32,6 +32,7 @@ class Config(BaseModel):
     walltime_sec: int = Field(ge=300)
     queue: str = Field(min_length=1)
     compute_allocation: str = Field(min_length=1)
+    reservation: Optional[str] = Field(default=None)
     working_directory: Optional[str] = Field(default=None)
     stdout_path: str = Field(min_length=1)
     stderr_path: str = Field(min_length=1)

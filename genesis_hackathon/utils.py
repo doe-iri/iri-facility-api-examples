@@ -63,6 +63,7 @@ def get_config(facility: str) -> Config:
         walltime_sec=c.WALLTIME_SEC,
         queue=c.QUEUE,
         compute_allocation=c.COMPUTE_ALLOCATION,
+        reservation=getattr(c, "RESERVATION", None),
         working_directory=getattr(c, "WORKING_DIR", None),
         stdout_path=c.STDOUT_PATH,
         stderr_path=c.STDERR_PATH,

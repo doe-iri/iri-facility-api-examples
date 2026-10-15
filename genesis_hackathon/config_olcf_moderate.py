@@ -17,6 +17,7 @@ FILESYSTEM_RESOURCE_ID = "orion"
 NODES=1
 WALLTIME_SEC=300
 QUEUE="batch"
+RESERVATION="gm_wed" # "gm_thu" "gm_fri"
 COMPUTE_ALLOCATION=OLCF_PROJECT
 WORKING_DIR=f"/lustre/orion/{OLCF_PROJECT}/proj-shared" if OLCF_PROJECT else None
 STDOUT_PATH="iri_test.out"

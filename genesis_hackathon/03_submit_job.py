@@ -30,6 +30,8 @@ def submit_job(config: Config):
     }
     if config.working_directory:
         payload["directory"] = config.working_directory
+    if config.reservation:
+            payload["attributes"]["reservation_id"] = config.reservation
     
     response = requests.post(
         f"{config.base_url}/compute/job/{config.compute_resource_id}",

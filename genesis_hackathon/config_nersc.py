@@ -24,7 +24,7 @@ FILESYSTEM_RESOURCE_ID = "65b28619-c3b6-4942-8da1-044a3b3a2a9e" # Global home
 NODES=1
 WALLTIME_SEC=300
 QUEUE="regular"
-COMPUTE_ALLOCATION="m5249"
+COMPUTE_ALLOCATION="m5429"
 # Timestamp both log files together (UTC, with microseconds).
 LOG_TIMESTAMP = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S_%fZ")
 STDOUT_PATH=f"{HOME_PATH}/iri_test_{LOG_TIMESTAMP}.out"

@@ -12,6 +12,10 @@ from models import Config, Facilities
 from utils import get_config, get_headers
 
 
+# Number of bytes to read from the start of the file
+VIEW_SIZE = 1000
+
+
 # Submit filesystem operation and get back a task ID
 def submit_view_file(config: Config, file_path: str) -> str:
 
@@ -26,7 +30,7 @@ def submit_view_file(config: Config, file_path: str) -> str:
             f"{config.base_url}/filesystem/view/{config.filesystem_resource_id}",
             params={
                 "path": file_path,
-                "size": 1000,
+                "size": VIEW_SIZE,
                 "offset": 0
             },
             headers=get_headers(config.token)
@@ -36,7 +40,7 @@ def submit_view_file(config: Config, file_path: str) -> str:
             f"{config.base_url}/filesystem/view/{config.filesystem_resource_id}",
             json={
                 "path": file_path,
-                "size": 1000,
+                "size": VIEW_SIZE,
                 "offset": 0
             },
             headers=get_headers(config.token)
@@ -48,6 +52,28 @@ def submit_view_file(config: Config, file_path: str) -> str:
 
     # Return task ID
     return response.get("task_id")
+
+
+# Print the file content as text, or the raw result if it holds no content
+def print_file_content(result, file_path: str):
+    output = result.get("output", result) if isinstance(result, dict) else result
+
+    # Failed tasks usually return the error message as a plain string
+    if isinstance(output, str):
+        print(output)
+        return
+    if not isinstance(output, dict) or not isinstance(output.get("content"), str):
+        print(json.dumps(result, indent=2))
+        return
+
+    content = output["content"]
+    start = output.get("start_position", 0)
+    end = output.get("end_position", start + len(content))
+    print(f"----- {file_path} (bytes {start}-{end}) -----")
+    print(content if content else "(file is empty)", end="" if content.endswith("\n") else "\n")
+    print("----- end -----")
+    if end - start >= VIEW_SIZE:
+        print(f"\nOnly the first {VIEW_SIZE} bytes are shown; raise VIEW_SIZE in 05_view_file.py to see more.")
 
 
 if __name__ == "__main__":
@@ -97,5 +123,5 @@ if __name__ == "__main__":
             break
 
     # Print error or file content
-    print(json.dumps(response.get("result"), indent=2))
+    print_file_content(response.get("result"), args.file_path)
     

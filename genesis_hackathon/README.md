@@ -163,6 +163,11 @@ python 04_get_job_state.py <job-id> --facility <select-facility-here>
 
 Once your job is `completed` or `failed`, continue to the next section.
 
+To request GPUs, submit with `03_submit_gpu_job.py` instead. It asks for `--gpus` GPUs (default 1) through `resources.gpu_cores_per_process` and the job prints the GPUs it sees: the full `nvidia-smi` output plus a one-line-per-GPU summary (name, UUID, PCI bus, memory, driver), `rocm-smi` on AMD GPUs, or the GPU device files and driver info when neither tool is installed. On ESnet the job runs in an `nvidia/cuda` container, and on NERSC it adds the `gpu` constraint so Perlmutter places it on GPU nodes.
+```bash
+python 03_submit_gpu_job.py --facility <select-facility-here> --gpus 1
+```
+
 ### 3.c. View Job Results
 
 You can view the result of your jobs with Filesystem operations. If your job completed, execute the following:
